@@ -10,7 +10,8 @@ readme = "README.md"
 requires-python = ">=3.10,<4.0"
 dependencies = [
     "piccolo[orjson,postgres,sqlite] (>=1.24.2,<2.0.0)",
-    "loguru (>=0.7.3,<0.8.0)"
+    "loguru (>=0.7.3,<0.8.0)",
+    "dhcppython (>=0.1.4,<0.2.0)"
 ]
 dynamic = [ "classifiers" ]
 
