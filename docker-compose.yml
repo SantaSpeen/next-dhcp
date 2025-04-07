@@ -15,7 +15,7 @@ services:
     networks:
       - nextdhcp
     volumes:
-      - ./config/:/config/
+      - ./config/:/app/config/
 
   dhcp-database:
     image: postgres:16-alpine
