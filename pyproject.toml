@@ -15,6 +15,7 @@ dynamic = [ "classifiers" ]
 repository = "https://github.com/SantaSpeen/next-dhcp"
 
 [tool.poetry]
+package-mode = false
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Topic :: Software Development :: Libraries :: Python Modules"
