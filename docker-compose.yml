@@ -1,0 +1,31 @@
+services:
+  dhcp-server:
+    build: .
+    container_name: dhcp-server
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - DB_DRIVER=postgres
+      - DB_HOST=127.0.0.1
+      - DB_PORT=10001
+      - DB_USER=nextdhcp
+      - DB_PASSWORD=nextdhcp
+      - DB_NAME=nextdhcp
+    networks:
+      - nextdhcp
+    volumes:
+      - ./config/:/config/
+
+  dhcp-database:
+    image: postgres:16-alpine
+    container_name: dhcp-database
+    restart: always
+    environment:
+      - POSTGRES_USER=nextdhcp
+      - POSTGRES_PASSWORD=nextdhcp
+      - POSTGRES_DB=nextdhcp
+    ports:
+      - "10001:5432"
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
